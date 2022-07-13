@@ -27,13 +27,51 @@ main
             transition: .5s
             list-style: none
             .img-box
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                padding: 10px
+                //box-sizing: border-box
                 img
-                    width: 300px 
-                    position: absolute
-                    top: 0
-                    left: 0
-                    width: 100%
-                    padding: 10px
-                    //box-sizing: border-box
+                    max-width: 100%
+                    opacity: .1
+                    transition: .5s
             .content-box
                 //
+            &:hover //Hover a la "li" .box
+                height: 400px
+                .img-box
+                    img
+                        opacity: 1
+            &::before
+                content: ''
+                position: absolute
+                top: -2px
+                left: -2px
+                right: -2px
+                bottom: -2px
+                z-index: -1
+                background-color: #6843d1
+            &::after
+                content: ''
+                position: absolute
+                top: -2px
+                left: -2px
+                right: -2px
+                bottom: -2px
+                //background-color: #fff
+                z-index: -2
+                filter: blur(40px)
+                background-color: #6843d1
+            &:nth-child(1)
+                &::before, &::after                    
+                    background-image: linear-gradient(235deg, #6843d1 0%, #f68084 100%)
+            &:nth-child(2)
+                &::before, &::after                    
+                    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%)
+            &:nth-child(3)
+                &::before, &::after                    
+                    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%)
+                
